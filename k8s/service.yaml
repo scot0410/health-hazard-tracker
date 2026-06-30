@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: health-hazard-tracker
+  namespace: default
+spec:
+  type: ClusterIP
+  selector:
+    app: health-hazard-tracker
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8080

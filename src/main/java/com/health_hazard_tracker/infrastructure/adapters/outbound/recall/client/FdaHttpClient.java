@@ -12,10 +12,19 @@ import org.springframework.web.client.RestClient;
 public class FdaHttpClient {
     private final RestClient fdaClient;
 
-    public @Nullable FdaRecallResponseDto fetchRecallData() {
+    public @Nullable FdaRecallResponseDto fetchOngoingRecallData() {
+        var pathogens = "listeria salmonella toxoplasma brucella";
+
+        String searchQuery = String.format(
+                "classification:\"Class I\" AND status:%s AND reason_for_recall:(%s)",
+                "Ongoing",
+                pathogens
+        );
+
+
+
         return fdaClient.get()
-                .uri("/food/enforcement.json/?search={search}&limit={limit}",
-                        "distribution_pattern:\"nationwide\"", 5)
+                .uri("/food/enforcement.json/?search={search}", searchQuery)
                 .retrieve()
                 .body(FdaRecallResponseDto.class);
     }

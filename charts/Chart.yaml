@@ -1,0 +1,6 @@
+apiVersion: v2
+name: health-hazard-tracker
+description: A Helm chart for deploying my application to EKS
+type: application
+version: 1.0.0
+appVersion: "1.0.0"

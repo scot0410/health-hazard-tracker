@@ -8,11 +8,12 @@ import java.time.LocalDate;
 public record FoodRecall(
         String recallNumber,
         String recallingFirm,
-        String productDescription,
+        ProductDescription productDescription,
         String reasonForRecall,
         String classification,
-        String codeInfo,
         String status,
         LocalDate parsedDate,
-        String simpleLocation
+        String distLocation,
+        String sourceAgency,
+        String infoUrl
 ) {}

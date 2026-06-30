@@ -1,0 +1,10 @@
+replicaCount: 2
+
+image:
+  repository: health-hazard-tracker
+  tag: latest
+  pullPolicy: Never
+
+service:
+  type: LoadBalancer
+  port: 8080
