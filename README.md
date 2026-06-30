@@ -1,4 +1,4 @@
-# outbreak-tracker
+# health-hazard-tracker
 
 #### Build 
 ```shell
